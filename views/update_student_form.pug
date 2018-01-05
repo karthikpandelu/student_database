@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Student Database
+  body
+    h1 Welcome to Student Database
+    h4 Update a Student details
+    p= result
+    form(action="/update" method="post")
+        label Enter name of the Student 
+        input(type="text" name="name" placeholder="Name..")
+        button(type="submit" name="button") Update

@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Student Database
+  body
+    h1 Welcome to Student Database
+    h4 Update a Student details
+    h5 #{data.name} details found
+    p Name: #{data.name}
+    p Register Number: #{data.reg_no}
+    p Branch: #{data.branch}
+    p Contact Number: #{data.contact_no}
+
+    h5 Enter the new details: (Enter old details if no change is needed)
+    form(action="/update_next" method="post")
+        label Name:   
+        input(type="text" name="name" placeholder="Name..")
+        <br/><br/>
+        label Register Number: 
+        input(type="text" name="reg_no" placeholder="Register Number..")
+        <br/><br/>
+        label Branch:   
+        input(type="text" name="branch" placeholder="Branch..")
+        <br/><br/>
+        label Contact Number:   
+        input(type="text" name="contact_no" placeholder="Contact number..")
+        <br/><br/>
+        button(type="submit" name="button") Update
