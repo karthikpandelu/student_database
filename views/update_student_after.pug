@@ -2,17 +2,29 @@ doctype html
 html
   head
     title Student Database
+    link(rel="stylesheet", href="/assets/style.css")
   body
-    h1 Welcome to Student Database
-    h4 Update a Student details
-    h5 #{data.name} details found
-    p Name: #{data.name}
-    p Register Number: #{data.reg_no}
-    p Branch: #{data.branch}
-    p Contact Number: #{data.contact_no}
+    nav.nav_bar
+      ul
+        a(href="student_database"): li Home
+        a(href="add_student.html"): li Add
+        a(href="search_student.html"): li Search
+        a(href="display.html"): li Display
+        a(href="remove_student.html"): li Remove
+        a(href="update_student.html"): li Update
+    h1 STUDENT DATABASE
+    h3.sub-heading UPDATE A STUDENT DETAILS
 
-    h5 Enter the new details: (Enter old details if no change is needed)
-    form(action="/update_next" method="post")
+    div.present-details
+      h3 #{data.name} DETAILS FOUND
+      p Name: #{data.name}
+      p Register Number: #{data.reg_no}
+      p Branch: #{data.branch}
+      p Contact Number: #{data.contact_no}
+
+    div.field-for-adding
+      h3 Enter the new details:</br>(Enter old details if no change is needed)
+      form(action="/update_next" method="post")
         label Name:   
         input(type="text" name="name" placeholder="Name..")
         <br/><br/>

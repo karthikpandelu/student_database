@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
 //use static files
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 //mongodb url
 var url = 'mongodb://127.0.0.1:27017/studentdb';
@@ -28,13 +28,18 @@ var url = 'mongodb://127.0.0.1:27017/studentdb';
 /////////////////////////////////////////
 //routes setup
 //route for home page
+
+app.get('/test', function(req, res){
+  res.sendFile(__dirname + '/views/add_student.html');
+});
+
 app.get('/student_database', function(req, res){
-    res.sendFile(__dirname + '/views/index.html');
+  res.render('index');
 });
 
 //to display add student form
 app.get('/add_student.html', function(req, res){
-    res.sendFile(__dirname + '/views/add_student.html');
+  res.render('add_student');    
 });
 
 //post mesthod of inserting new student details
@@ -59,7 +64,7 @@ app.post('/insert', function(req, res){
             console.log('Item iserted');
             db.close();
             //after addintion redirecting the page to the form again
-            res.redirect('/add_student.html');
+            res.render('add_student', {result_s: "STUDENT DETAILS ADDED SUCCESSEFULLY"});
           }
         });
       }
@@ -68,7 +73,7 @@ app.post('/insert', function(req, res){
 
 //to display the form to search a student details
 app.get('/search_student.html', function(req, res){
-    res.sendFile(__dirname + '/views/search_student.html');
+    res.render('search_student');
 });
 
 //handling post request of serach
@@ -96,7 +101,7 @@ app.post('/search', function(req, res){
               }
             }
             if(!flag){
-              res.render('displayNone'); //if not found render display none file
+              res.render('search_student', {result_f: name + " NOT FOUND"}); //if not found render display none file
               db.close();
             }
             //if found render the file and send data to display
@@ -159,7 +164,7 @@ app.post('/remove', function(req, res){
                     console.log("Item deleted");
                     db.close();
                     //render the form again with message of success
-                    res.render('remove_student', {result: input_name + " details deleted"}); 
+                    res.render('remove_student', {result_s: input_name + " DETAILS DELETED"}); 
                   }
                 });
               }
@@ -168,7 +173,7 @@ app.post('/remove', function(req, res){
               //if data to be deleted not present in the database, render the form again with the message of failure
               console.log("Item not found");
               db.close();
-              res.render('remove_student', {result: input_name + " not found"}); 
+              res.render('remove_student', {result_f: input_name + " NOT FOUND"}); 
             }
           }
         });
@@ -214,7 +219,7 @@ app.post('/update', function(req, res){
                         }else{
                           console.log('Item  updated');
                           db.close();
-                          res.render('update_student_form', {result: input_name + " Updated"});
+                          res.render('update_student_form', {result_s: req.body.name + " DETAILS UPDATED"});
                         }
                       });
                     }
@@ -226,7 +231,7 @@ app.post('/update', function(req, res){
               //if item to be updated not found, render the form to input name again with failure message
               console.log("Item not found");
               db.close();
-              res.render('update_student_form', {result: input_name + " not found"}); 
+              res.render('update_student_form', {result_f: input_name + " NOT FOUND"}); 
             }
           }
         });

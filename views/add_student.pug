@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Student Database
+    link(rel="stylesheet", href="/assets/style.css")
+  body
+    nav.nav_bar
+      ul
+        a(href="student_database"): li Home
+        a(href="add_student.html"): li Add
+        a(href="search_student.html"): li Search
+        a(href="display.html"): li Display
+        a(href="remove_student.html"): li Remove
+        a(href="update_student.html"): li Update
+    h1 STUDENT DATABASE
+    h3.sub-heading ADD A STUDENT DETAILS
+
+    div.result-removal
+      p#success= result_s
+
+    div.field-for-adding
+        form(action="/insert" method="post")
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Name">
+            <label>Register Number:</label>
+            <input type="text" name="reg_no" placeholder="Register number">
+            <label>Branch:</label>
+            <input type="text" name="branch" placeholder="Branch">
+            <label>Contact Number:</label>
+            <input type="text" name="contact_no" placeholder="Contact number">
+            <button type="submit" name="button">Submit</button>

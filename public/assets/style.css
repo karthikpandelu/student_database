@@ -1,0 +1,164 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.main_heading{
+    background-color: white;
+    color: #004d40; 
+    text-align: center;
+}
+
+.nav_bar{
+    text-align: center;
+    background-color: #493D55;
+    padding: 4px 0;
+    z-index: 100;
+}
+
+.nav_bar li{
+    display: inline-block;
+    width: 100px;
+    font-size: 1.2rem;
+}
+
+.nav_bar a{
+    color: white;
+}
+
+h1{
+    background-color: rgb(97, 84, 109);
+    margin: 0;
+    padding: 3px 0;
+    color: white;
+    text-align: center;
+}
+
+.sub-heading{
+    background-color: rgb(108, 95, 119);
+    margin: 0;
+    padding: 3px 0;
+    color: white;
+    text-align: center;
+}
+
+.options{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    width: 30%;
+}
+
+.options p{
+    margin: 7%;
+    padding: 10px;
+    background-color: rgb(97, 84, 109);
+    color: white;
+    font-size: 1.5rem;
+}
+
+form{
+    margin: 20px;
+    padding: 10px;
+}
+
+label{
+    color: #493D55;
+    font-size: 18px;;
+}
+
+.field-for-name{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    width: 30%;
+}
+
+.field-for-adding{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(250, 250, 250);
+    width: 30%;
+}
+
+.field-for-adding h3{
+    margin: 10px 20px;
+    color: #493D55;
+}
+
+.present-details{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    width: 30%;
+}
+
+.present-details h3{
+    margin: 10px 20px;
+    color: green;
+}
+
+.present-details p{
+    color: #493D55;
+}
+
+.each-data{
+    float: left;
+    margin-left: 3%;
+    margin-top: 2%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(250, 250, 250);
+    width: 20%;
+    color: #493D55;
+}
+
+.each-data p{
+    margin-left: 10px;
+}
+
+input{
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+button{
+    background-color: #493D55;
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 4px;
+}
+
+.result-removal #failure{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+
+.result-removal #success{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -2,12 +2,22 @@ doctype html
 html
   head
     title Student Database
+    link(rel="stylesheet", href="/assets/style.css")
   body
-    h1 Welcome to Student Database
-    h3 List of all the students
+    nav.nav_bar
+      ul
+        a(href="student_database"): li Home
+        a(href="add_student.html"): li Add
+        a(href="search_student.html"): li Search
+        a(href="display.html"): li Display
+        a(href="remove_student.html"): li Remove
+        a(href="update_student.html"): li Update
+    h1 STUDENT DATABASE
+    h3.sub-heading LIST OF ALL STUDENTS
+
     each item in data
-      p Name: #{item.name}
-      p Register Number: #{item.reg_no}
-      p Branch: #{item.branch}
-      p Contact Number: #{item.contact_no}
-      p _______________________________
+      div.each-data
+        p Name: #{item.name}
+        p Register Number: #{item.reg_no}
+        p Branch: #{item.branch}
+        p Contact Number: #{item.contact_no}
